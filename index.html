@@ -5,93 +5,165 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PT. Prakarsa Tani Sejati</title>
   <style>
-    body {font-family: 'Segoe UI', sans-serif; margin:0; line-height:1.6; background:linear-gradient(135deg,#e8f5e9,#f1f8e9,#fffde7);}
-    header {background:#1b5e20; color:white; padding:20px; display:flex; align-items:center; justify-content:center; gap:20px; flex-wrap:wrap; text-align:left;}
-    nav {background:#2e7d32; padding:12px; text-align:center; position:sticky; top:0; z-index:1000;}
-    nav a {color:white; margin:0 15px; text-decoration:none; font-weight:bold;}
-    nav a:hover {text-decoration:underline;}
-    section {padding:60px 20px; max-width:1100px; margin:40px auto; border-left:5px solid #2e7d32; box-shadow:0 4px 15px rgba(0,0,0,0.05);} 
+    body {font-family: 'Segoe UI', sans-serif; margin:0; line-height:1.6; background:linear-gradient(135deg,#e8f5e9,#f1f8e9,#fffde7);} 
 
-section h2{border-bottom:3px solid #c49a00; display:inline-block; padding-bottom:5px; margin-bottom:20px;}
+    /* HEADER BARU (PROFESIONAL) */
+    header {
+      background:linear-gradient(135deg,#1b5e20,#2e7d32);
+      color:white;
+      padding:15px 30px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+    }
 
-/* SECTION BACKGROUND VARIATION */
-section:nth-child(even){background:rgba(255,255,255,0.7); backdrop-filter:blur(5px); border-radius:12px;}
-section:nth-child(odd){background:rgba(255,255,255,0.4); backdrop-filter:blur(5px); border-radius:12px;}
+    .header-left {
+      display:flex;
+      align-items:center;
+      gap:20px;
+    }
+
+    .logo {
+      width:140px;
+      height:auto;
+      object-fit:contain;
+      background:white;
+      padding:8px;
+      border-radius:8px;
+    }
+
+    .header-text h1 {
+      margin:0;
+      font-size:22px;
+    }
+
+    .header-text p {
+      margin:0;
+      font-size:13px;
+      opacity:0.9;
+    }
+
+    nav {
+      background:#2e7d32;
+      padding:12px;
+      text-align:center;
+      position:sticky;
+      top:0;
+      z-index:1000;
+    }
+
+    nav a {
+      color:white;
+      margin:0 15px;
+      text-decoration:none;
+      font-weight:bold;
+      position:relative;
+    }
+
+    nav a::after {
+      content:"";
+      position:absolute;
+      bottom:-5px;
+      left:0;
+      width:0;
+      height:2px;
+      background:#ffd54f;
+      transition:0.3s;
+    }
+
+    nav a:hover::after {
+      width:100%;
+    }
+
+    section {
+      padding:60px 20px;
+      max-width:1100px;
+      margin:40px auto;
+      border-left:5px solid #2e7d32;
+      box-shadow:0 4px 15px rgba(0,0,0,0.05);
+    }
+
+    section h2 {
+      border-bottom:3px solid #c49a00;
+      display:inline-block;
+      padding-bottom:5px;
+      margin-bottom:20px;
+    }
+
+    section:nth-child(even){background:rgba(255,255,255,0.8); border-radius:12px;}
+    section:nth-child(odd){background:rgba(255,255,255,0.5); border-radius:12px;}
 
     .hero {
       background:url('foto kebun 2.jpg.jpeg') no-repeat center/cover;
-      color:white; height:450px; display:flex; align-items:center; justify-content:center; text-align:center;
+      color:white;
+      height:400px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      position:relative;
     }
-    .hero h1 {font-size:28px; background:rgba(0,0,0,0.6); padding:15px 25px; border-radius:10px;}
-.hero{position:relative;}
-.hero::after{content:""; position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.3);} 
-.hero h1{position:relative; z-index:2;}
+
+    .hero::after{
+      content:"";
+      position:absolute;
+      width:100%;
+      height:100%;
+      background:rgba(0,0,0,0.4);
+    }
+
+    .hero h1 {
+      font-size:26px;
+      background:rgba(0,0,0,0.6);
+      padding:15px 25px;
+      border-radius:10px;
+      z-index:2;
+    }
 
     .grid {display:grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap:25px;}
-    .card {background:white; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); transition:0.3s;}
 
-/* WARNA KHUSUS UNIT BISNIS */
-.card-sawit {background:#2e7d32; color:white; font-weight:bold;} /* hijau sawit */
-.card-cpo {background:#c49a00; color:white; font-weight:bold;} /* emas CPO */
-    .card:hover {transform:translateY(-5px);}
-
-    .slider {position:relative; height:350px; overflow:hidden; border-radius:15px;}
-    .slides {display:flex; width:300%; animation:slide 12s infinite;}
-    .slides img {width:100%; height:350px; object-fit:cover;}
-    @keyframes slide {
-      0%,33% {margin-left:0;}
-      36%,66% {margin-left:-100%;}
-      69%,100% {margin-left:-200%;}
+    .card {
+      background:white;
+      padding:20px;
+      border-radius:12px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.1);
+      transition:0.3s;
     }
 
-    .gallery {display:grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap:15px;}
-    .gallery img {
-      width:100%; height:200px; object-fit:cover;
-      border-radius:12px; transition:0.4s;
+    .card:hover {
+      transform:translateY(-8px) scale(1.02);
+      box-shadow:0 8px 25px rgba(0,0,0,0.15);
     }
-    .gallery img:hover {transform:scale(1.05);}
 
-/* ANIMASI SCROLL */
-.reveal {opacity:0; transform:translateY(40px); transition:all 0.8s ease;}
-.reveal.active {opacity:1; transform:translateY(0);}
+    .card-sawit {background:linear-gradient(135deg,#2e7d32,#66bb6a); color:white; font-weight:bold;} 
+    .card-cpo {background:linear-gradient(135deg,#c49a00,#ffd54f); color:white; font-weight:bold;}
 
-/* BACKGROUND MOTIF HALUS */
-body::before {
-  content:"";
-  position:fixed;
-  top:0; left:0;
-  width:100%; height:100%;
-  background-image: radial-gradient(rgba(0,0,0,0.03) 1px, transparent 1px);
-  background-size: 40px 40px;
-  z-index:-1;
-}
+    footer {
+      background:#1b5e20;
+      color:white;
+      text-align:center;
+      padding:20px;
+      margin-top:40px;
+    }
 
-/* HOVER PREMIUM CARD */
-.card:hover {
-  transform:translateY(-8px) scale(1.02);
-  box-shadow:0 8px 25px rgba(0,0,0,0.15);
-}
+    /* RESPONSIVE */
+    @media(max-width:768px){
+      header {flex-direction:column; text-align:center;}
+      .header-left {flex-direction:column;}
+    }
 
-/* GRADIENT PREMIUM */
-.card-sawit {background:linear-gradient(135deg,#2e7d32,#66bb6a);} 
-.card-cpo {background:linear-gradient(135deg,#c49a00,#ffd54f);}
-
-    /* LOGO SIZE */
-.logo {
-  width:260px;
-  height:auto;
-}
-
-footer {background:#1b5e20; color:white; text-align:center; padding:20px; margin-top:40px;}
   </style>
 </head>
 <body>
 
 <header>
-  <img src="foto LOGO 1.jpg" class="logo">
-  <div>
-    <h1>PT. Prakarsa Tani Sejati</h1>
-    <p>Perkebunan & Pengolahan Kelapa Sawit Berkelanjutan</p>
+  <div class="header-left">
+    <img src="foto LOGO 1.jpg" class="logo">
+    <div class="header-text">
+      <h1>PT. Prakarsa Tani Sejati</h1>
+      <p>Perkebunan & Pengolahan Kelapa Sawit Berkelanjutan</p>
+    </div>
   </div>
 </header>
 
@@ -109,70 +181,12 @@ footer {background:#1b5e20; color:white; text-align:center; padding:20px; margin
   <h1>Perkebunan Sawit Berkelanjutan & Modern</h1>
 </div>
 
-<section id="about" class="reveal">
+<section id="about">
   <h2>Tentang Perusahaan</h2>
-  <p>PT. Prakarsa Tani Sejati (PTS) merupakan salah satu pionir industri perkebunan di Kabupaten Ketapang, Kalimantan Barat.
-  <p>berdiri pada tanggal 05 november 1984 yang merupakan Perkebunan Besar Swasta Nasional (PBSN) di bawah naungan Bumi Raya Utama Group (BRUG)
-  <p>kami membawa misi untuk memadukan pertumbuhan industri dengan pemberdayaan masyarakat lokal melalui pengelolaan kelapa sawit yang berkelanjutan.
-  <p>Perjalanan panjang kami dimulai lebih dari tiga dekade lalu, membangun fondasi yang kokoh bagi kemajuan ekonomi daerah:
-  <p>1984: Resmi didirikan pada tanggal 05 November 1984, menandai kehadiran salah satu perusahaan tertua dan paling berpengalaman di Ketapang.
-  <p>1992 - 1993: Proses pembukaan lahan dimulai pada tahun 1992, diikuti dengan pembangunan kebun pertama secara masif pada Maret 1993.
-  <p>1995 - 1997: Sebagai langkah modernisasi hilir, pabrik pengolahan mulai didirikan pada tahun 1995 dan resmi beroperasi penuh pada tahun 1997.</p>
+  <p>PT. Prakarsa Tani Sejati (PTS) merupakan salah satu pionir industri perkebunan di Kabupaten Ketapang, Kalimantan Barat.</p>
 </section>
 
-<section id="visi" class="reveal">
-  <h2>Visi & Misi</h2>
-  <h2>visi</h2>
-    <p>Turut melaksanakan dan menopang kebijaksanaan serta program pemerintah di bidang ekonomi dan Pembangunan nasional umumnya.
-    <p>Khusus di sub-sektor Perkebunan dalam arti seluas-luasnya dengan tujuan memupuk keuntungan berdasarkan prinsip-prinsip perusahaan yang sehat.
-</p>
-    <h2>misi</h2>
-  <p>Profitisasi melalui pendayagunaan, pengelolaan perusahaan di bidang Perkebunan dengan mengusahakan komoditi unggulan yakni kelapa sawit secara efisien, 
-    ekonomis sehingga dapat mencapai produk yang memenuhi standar kualitas yang dibutuhkan oleh konsumen , serta melakukan diversifikasi usaha yang dapat mendukung kinerja perusahaan.
-  <p>Pengelolaan produksi yang disesuaikan dengan perkembangan teknologi yang berwawasan lingkungan, memiliki daya saing yang kuat, 
-    serta meningkatkan kemitraan dengan petani untuk memenuhi pasaar dalam dan luar negeri guna kelangsungan usaha dalam mendukung pertanian Perkebunan..</p>
-</section>
-
-<section id="bisnis" class="reveal">
-  <h2>Unit Bisnis</h2>
-  <div class="grid">
-    <div class="card card-sawit">🌴 Perkebunan Sawit</div>
-    <div class="card card-cpo">🏭 Pabrik CPO</div>
-  </div>
-</section>
-
-<section id="data" class="reveal">
-  <h2>Data Operasional</h2>
-  <div class="grid">
-    <div class="card" style="background:#2e7d32; color:white; font-weight:bold;">🌴 12.221 Ha<br><small>Luas Area</small></div>
-    <div class="card" style="background:#c49a00; color:white; font-weight:bold;">🏭 37.237 Ton<br><small>Produksi CPO</small></div>
-    <div class="card" style="background:#616161; color:white; font-weight:bold;">⚙️ 5.505 Ton<br><small>Produksi Kernel</small></div>
-  </div>
-</section>
-
-<section id="slider" class="reveal">
-  <h2>Highlight</h2>
-  <div class="slider">
-    <div class="slides">
-      <img src="pabrik.jpg">
-      <img src="foto kebun 2.jpg.jpeg">
-      <img src="foto CSR 3.jpg.jpeg">
-    </div>
-  </div>
-</section>
-
-<section id="galeri" class="reveal">
-  <h2>Galeri</h2>
-  <div class="gallery">
-    <img src="pabrik.jpg">
-    <img src="foto kebun 2.jpg">
-    <img src="foto CSR 3.jpg">
-    <img src="foto CSR 4.jpg">
-    <img src="foto CSR 5.jpg.">
-  </div>
-</section>
-
-<section id="kontak" class="reveal">
+<section id="kontak">
   <h2>Kontak</h2>
   <p>Email: brugptk@gmail.com</p>
   <p>Telepon: 08125775624</p>
@@ -182,17 +196,5 @@ footer {background:#1b5e20; color:white; text-align:center; padding:20px; margin
   <p>&copy; 2026 PT. Prakarsa Tani Sejati</p>
 </footer>
 
-<script>
-const reveals = document.querySelectorAll('.reveal');
-window.addEventListener('scroll', function() {
-  reveals.forEach(function(el) {
-    const top = el.getBoundingClientRect().top;
-    const windowHeight = window.innerHeight;
-    if (top < windowHeight - 100) {
-      el.classList.add('active');
-    }
-  });
-});
-</script>
 </body>
 </html>
