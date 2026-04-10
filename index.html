@@ -6,7 +6,7 @@
   <title>PT. Prakarsa Tani Sejati</title>
   <style>
     body {font-family: 'Segoe UI', sans-serif; margin:0; line-height:1.6; background:linear-gradient(135deg,#e8f5e9,#f1f8e9,#fffde7);}
-    header {background:#1b5e20; color:white; padding:20px; text-align:center;}
+    header {background:#1b5e20; color:white; padding:20px; display:flex; align-items:center; justify-content:center; gap:20px; flex-wrap:wrap; text-align:left;}
     nav {background:#2e7d32; padding:12px; text-align:center; position:sticky; top:0; z-index:1000;}
     nav a {color:white; margin:0 15px; text-decoration:none; font-weight:bold;}
     nav a:hover {text-decoration:underline;}
@@ -76,15 +76,23 @@ body::before {
 .card-sawit {background:linear-gradient(135deg,#2e7d32,#66bb6a);} 
 .card-cpo {background:linear-gradient(135deg,#c49a00,#ffd54f);}
 
-    footer {background:#1b5e20; color:white; text-align:center; padding:20px; margin-top:40px;}
+    /* LOGO SIZE */
+.logo {
+  width:260px;
+  height:auto;
+}
+
+footer {background:#1b5e20; color:white; text-align:center; padding:20px; margin-top:40px;}
   </style>
 </head>
 <body>
 
 <header>
-  <img src="foto LOGO 1.jpg" width="120">
-  <h1>PT. PRAKARSA TANI SEJATI</h1>
-  <p>Perkebunan & Pengolahan Kelapa Sawit Berkelanjutan</p>
+  <img src="foto LOGO 1.jpg" class="logo">
+  <div>
+    <h1>PT. Prakarsa Tani Sejati</h1>
+    <p>Perkebunan & Pengolahan Kelapa Sawit Berkelanjutan</p>
+  </div>
 </header>
 
 <nav>
